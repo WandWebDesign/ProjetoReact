@@ -1,0 +1,588 @@
+/* VARIÁVEIS GLOBAIS - Define cores e estilos que serão usados em todo o site */
+/*Cinzel*/
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*Cinzel Decorative*/
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*Poppins*/
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+ :root {
+            
+            --main-color: #d3ad7f;  /* Cor principal (dourado) */
+            --headercolor: #423474; /*Cor do Header Principal*/
+            --hover-color: #E92E89; /*Cor hover do menu principal*/
+
+            --color-btn: #FFA1CF;   /*Cor do botao*/
+            --hover-btn: #ff007b;   /*Cor hover dos botoes de compra*/
+
+            --text: #484343;        /* Cor escura para textos */
+            --bg: #FFF4ED;           /* Cor de fundo escura */
+            --border: 0.1rem solid rgba(255,255,255,0.3);  /* Borda semitransparente */
+            --gradiente: linear-gradient(#6955B2, #844F9E);
+            
+            font-size: 10px;         /* Tamanho base para uso de unidades rem */
+            --borderadius: 10px
+            }
+
+/* RESET CSS - Remove estilos padrão dos navegadores */
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear; /* Transição suave para efeitos hover */
+
+    box-sizing: border-box;
+}
+
+/* CORPO DO DOCUMENTO - Estilos gerais da página */
+body {
+    font-family: 'Cinzel', serif;
+    background-image: url("Images/Fundo.png");
+    color: white;
+    padding-top: 80px;
+
+    /* --- CORREÇÃO DO ESPAÇO --- */
+    
+    /* 1. Ocupa no mínimo 100% da altura da tela */
+    min-height: 100vh; 
+    
+    /* 2. Organiza os elementos em coluna (Header, Article, Footer) */
+    display: flex;
+    flex-direction: column; 
+
+    /* 3. Trava a imagem de fundo para cobrir tudo e não deixar branco embaixo */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-position: center;
+}
+
+/* SEÇÕES - Container principal para o conteúdo */
+section {
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* CABEÇALHO - Menu de navegação fixo no topo */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999; /* Aumentei para garantir que fique sobre tudo */
+    border-bottom: var(--border);
+    background-color: var(--headercolor);
+}
+
+/* CONTEÚDO DO CABEÇALHO - Alinha logo, menu e ícones */
+.header section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    gap: 20px; /* Espaço entre Logo, Busca e Menu */
+}
+
+.logo-e-marca {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0; /* Impede que o logo amasse se a tela diminuir */
+}
+
+/* LOGO - Estilização da imagem da logo */
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+ /* LINKS DE NAVEGAÇÃO - Estilização do menu */
+        .menu-principal a {
+            margin: 0 1rem;
+            font-size: 1.8rem;
+            font-family: 'Cinzel Decorative';
+            color: #fff;
+        }
+
+        /* Estilo para o dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+
+.dropdown-content{
+    list-style: none;
+    border-radius: var(--borderadius);
+    }
+
+.dropbtn {
+  text-decoration: none;
+  color: inherit;
+  padding: px 15px;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff; /* fundo do menu */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Mostra o submenu ao passar o mouse */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* opcional: mudar cor do botÃ£o ao hover */
+.dropdown:hover .dropbtn {
+  color: #ff007b; /* azul ou outra cor da sua paleta */
+  font-weight: bold;
+}
+
+/* EFEITO HOVER NOS LINKS - Mudança de cor e tamanho ao passar o mouse */
+.menu-principal a:hover {
+    color: var(--hover-color);
+    border-bottom: 0.1rem solid var(--hover-color);
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* ÍCONES/BARRA DE PESQUISA - Estilização dos ícones de pesquisa e carrinho */
+.icones {
+    display: flex;
+    align-items: center;
+    flex: 1; /* MÁGICA: Faz a barra ocupar todo o espaço disponível no meio */
+    max-width: 600px; /* Limite para não ficar infinito em telas grandes */
+    margin: 0 20px; /* Afasta do logo e do menu */
+}
+
+.icones #pesquisar {
+    font-family: 'Poppins';
+    padding: 10px 15px; /* Um pouco mais de padding para ficar bonito */
+    border-radius: var(--borderadius);
+    flex: 1; /* Ocupa todo o espaço sobrando ao lado da lupa */
+    background: transparent; /* Fundo transparente pois o container já é branco */
+    color: #333; /* Texto escuro para contraste */
+    border: none; /* Remove borda padrão */
+    font-size: 1.4rem; /* Tamanho da fonte ajustado */
+}
+
+.icones #pesquisar:focus {
+    outline: none;
+}
+
+#pesquisar:hover {
+    border: 1px solid #000000;
+}
+
+.icones img {
+    margin: 1rem;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+}
+
+/* EFEITO HOVER NOS ÍCONES - Aumenta levemente ao passar o mouse */
+.icones img:hover {
+    width: 40px;
+    height: 40px;
+}
+
+/* ESTILOS DA PÁGINA DE PRODUTO ESPECÍFICO */
+.comprar-produtos {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    color: white;
+    
+    /* ADICIONE ISSO: Faz essa parte crescer e empurrar o footer */
+    flex: 1; 
+}
+
+.conteiner-comprar-produtos {
+    display: flex;
+    gap: 30px; /* Espaço entre a foto e a descrição */
+    align-items: stretch; /* Faz as caixas terem a mesma altura */
+    max-width: 1100px; /* Limita a largura para não esticar demais em telas grandes */
+    width: 100%;
+    background: rgba(66, 52, 116, 0.6); /* Fundo sutil atrás de tudo (opcional) */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Sombra elegante */
+}
+
+/* --- FOTO DO PRODUTO --- */
+.fotos-produtos {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff; /* Fundo branco caso a imagem seja PNG transparente */
+    border-radius: 16px;
+    overflow: hidden;
+    min-height: 300px; /* Altura mínima */
+}
+
+.fotos-produtos img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    transition: transform 0.5s ease;
+}
+
+.fotos-produtos img:hover {
+    transform: scale(1.05); /* Leve zoom na imagem ao passar o mouse */
+}
+
+/* --- DESCRIÇÃO E DETALHES --- */
+.descricao-produtos {
+    flex: 1.2; /* Dá um pouco mais de espaço para o texto que para a foto */
+    display: flex;
+    flex-direction: column;
+    background: var(--hover-color); /* Fundo Rosa */
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(233, 46, 137, 0.4);
+}
+
+#produto-nome {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+#produto-marca {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#produto-descricao {
+    background-color: #fff;
+    color: var(--text);
+    padding: 20px;
+    border-radius: var(--borderadius);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 400;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Faz a descrição ocupar o espaço disponível */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05); /* Sombra interna sutil */
+}
+
+/* --- PREÇOS --- */
+.preco-produtos {
+    margin-top: auto; /* Empurra o preço para baixo */
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column; /* Empilha preço novo e antigo */
+    gap: 5px;
+}
+
+#produto-preco {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+#produto-preco-original {
+    text-decoration: line-through;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7); /* Branco transparente */
+    font-weight: 400;
+}
+
+/* --- BOTÃO COMPRAR --- */
+.botao-comprar {
+    background-color: var(--color-btn);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #484343;
+    border-radius: var(--borderadius);
+    height: 55px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.botao-comprar:hover {
+    background-color: var(--bg);
+    color: var(--hover-btn);
+    border-color: var(--hover-btn);
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    transform: translateY(-3px); /* Move o botão levemente para cima */
+    /* Removemos o font-size maior aqui pois quebrava o layout */
+}
+
+.botao-comprar:active {
+    transform: translateY(1px); /* Efeito de clique */
+}
+
+/* --- ESTILO DA BARRA DE PESQUISA LIVE --- */
+
+/* Container para garantir que a lista fique embaixo do input */
+.container-busca {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%; /* Preenche 100% da div .icones */
+    background-color: #fff; /* Fundo branco para o campo */
+    border-radius: var(--borderadius);
+    padding-right: 10px; /* Espaço para a lupa não colar na borda */
+}
+
+/* A lista de resultados (escondida por padrão) */
+.resultado-busca-lista {
+    position: absolute;
+    top: 100%; /* Cola logo abaixo do input */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Sombra mais forte para destacar */
+    z-index: 10000; /* Z-index altíssimo para ficar na frente de tudo */
+    display: none; 
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 5px; /* Pequeno espaço entre a barra e a lista */
+}
+
+/* Cada item da lista */
+.item-busca {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    text-decoration: none;
+    color: #333; /* Garante que o texto seja escuro */
+    background-color: white; /* Garante fundo branco */
+}
+
+.item-busca:hover {
+    background-color: #f0f0f0; /* Cinza claro no hover */
+}
+
+.item-busca:last-child {
+    border-bottom: none;
+}
+
+/* Imagem pequena dentro da busca */
+.item-busca img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 10px;
+    /* Remove margin da lupa herdada anteriormente */
+    margin-left: 0; 
+}
+
+.info-busca {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.info-busca h4 {
+    font-size: 1.4rem;
+    margin: 0;
+    font-weight: bold;
+    color: #000;
+}
+
+.info-busca span {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* --- RESPONSIVIDADE (MOBILE) --- */
+@media (max-width: 768px) {
+    .comprar-produtos {
+        padding: 1rem;
+    }
+
+    .conteiner-comprar-produtos {
+        flex-direction: column; /* Empilha foto e descrição verticalmente */
+        height: auto;
+    }
+
+    .fotos-produtos {
+        min-height: 250px;
+        max-height: 350px;
+    }
+
+    .descricao-produtos {
+        padding: 20px;
+    }
+
+    #produto-nome {
+        font-size: 2rem;
+    }
+}
+
+    /* RODAPÉ */
+    footer {
+    background-color: var(--headercolor);
+    color: white;
+    margin-top: 0; /* Remova margens grandes daqui se usar o flex:1 acima */
+    border-top: var(--border);
+    font-family: 'Poppins', sans-serif;
+    /* O flex do body já vai empurrar ele, não precisa de margin-top: auto aqui se usar flex:1 no article */
+}
+
+    .rodape {
+        display: flex; /* Organiza em colunas lado a lado */
+        justify-content: space-around; /* Espaçamento igual entre as colunas */
+        align-items: flex-start; /* Alinha tudo ao topo */
+        flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+        padding: 3rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 2rem; /* Espaço entre as colunas */
+    }
+
+    /* Colunas do Rodapé (Menu, Redes, Form) */
+    .menu, 
+    .redes-sociais, 
+    .Formulário {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* Espaço entre os links/itens */
+        min-width: 250px; /* Tamanho mínimo para não ficar muito espremido */
+    }
+
+    /* Estilo dos Títulos/Texto forte */
+    .redes-sociais p strong,
+    .Formulário p {
+        font-family: 'Cinzel Decorative', serif;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    /* Links do Menu e Redes */
+    .menu a,
+    .redes-sociais a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: 0.3s;
+        font-size: 1rem;
+        padding-left: 0; /* Remove padding antigo */
+    }
+
+    .menu a:hover,
+    .redes-sociais a:hover {
+        color: var(--hover-color);
+        transform: translateX(5px); /* Move levemente para a direita */
+        text-decoration: none; /* Remove sublinhado padrão */
+    }
+
+    /* Formulário de Newsletter */
+    footer form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background: transparent; /* Remove fundo roxo antigo se preferir clean */
+        padding: 0;
+    }
+
+    #email {
+        font-family: 'Poppins', sans-serif;
+        background: var(--bg);
+        border: none;
+        border-radius: var(--borderadius);
+        padding: 12px;
+        width: 100%;
+        box-sizing: border-box; /* Garante que o padding não aumente a largura */
+        color: var(--text);
+    }
+
+    #cadastro {
+        font-family: 'Poppins', sans-serif;
+        color: #484343;
+        font-weight: 700;
+        background-color: var(--color-btn);
+        height: 45px;
+        width: 100%; /* Botão ocupa largura total do form */
+        border-radius: var(--borderadius);
+        margin-left: 0;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #cadastro:hover {
+        background-color: var(--hover-btn);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* Barra de Direitos Autorais */
+    #Fixo-baixo {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    
+    /* IMPORTANTE: Zera a margem final */
+    margin-bottom: 0; 
+    }
+
+    /* RESPONSIVIDADE DO RODAPÉ */
+    @media (max-width: 768px) {
+        .rodape {
+            flex-direction: column; /* Empilha um embaixo do outro no celular */
+            align-items: center;
+            text-align: center;
+        }
+
+        .menu, .redes-sociais, .Formulário {
+            align-items: center; /* Centraliza o conteúdo das colunas */
+            width: 100%;
+        }
+        
+        .menu a:hover,
+        .redes-sociais a:hover {
+            transform: translateX(0) scale(1.1); /* No celular, aumenta em vez de mover */
+        }
+    }
