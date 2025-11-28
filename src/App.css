@@ -1,0 +1,699 @@
+/* VARIÃVEIS GLOBAIS - Define cores e estilos que serÃ£o usados em todo o site */
+        /*Cinzel*/
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        /*Cinzel Decorative*/
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        /*Poppins*/
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        :root {
+            --headercolor: #423474;
+            --hover-color: #E92E89; 
+            --text: #161313;       
+            --bg: #FFF4ED;         
+            --border: 0.1rem solid rgba(255,255,255,0.3);  /* Borda semitransparente */
+            --gradiente: linear-gradient(#6955B2, #844F9E);
+            font-size: 10px;       
+            --main-color: #e92e8a; 
+            --color-btn: #333;     
+            --hover-btn: #e92e8a;  
+            --borderadius: 12px;
+            --bg-light: #f8f9fa;    
+            --text-dark: #212529;
+            --text-muted: #868e96;
+            }
+
+        /* RESET CSS - Remove estilos padrão dos navegadores */
+        * {
+          margin: 0;
+          padding: 0;
+          outline: none;
+          border: none;
+          text-decoration: none;
+          text-transform: capitalize;
+          transition: 0.2s linear; 
+        }
+
+
+        /* CORPO DO DOCUMENTO - Estilos gerais da pagina */
+        body {
+          font-family: 'Cinzel';
+          background-image: url("Images/Fundo.png");
+          color: white;
+          padding-top: 80px;
+        }
+
+        /* Seções - Container principal para o conteudo */
+        section {
+          padding: 3rem 2rem;
+          margin: 0 auto;  
+        }
+
+        /* Cabeçalho - Menu de navegação fixo no topo */
+        .header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 999; 
+          border-bottom: var(--border);
+          background-color: var(--headercolor);
+        }
+
+        /* Conteudo do cabeçalho - Alinha logo, menu e i­cones */
+        .header section {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-top: 1.5rem;
+          padding-bottom: 1.5rem;
+          gap: 20px; /* Espaço entre Logo, Busca e Menu */
+        }
+
+        .logo-e-marca {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          flex-shrink: 0;
+        }
+
+        /* LOGO - Estilização da imagem da logo */
+        .logo img {
+          height: 50px;
+          width: auto;
+        }
+
+        /* LINKS DE NAVEGAÇÃO - Estilização do menu */
+        .menu-principal a {
+          margin: 0 1rem;
+          font-size: 1.8rem;
+          font-family: 'Cinzel Decorative';
+          color: #fff;
+        }
+
+    
+
+        /* EFEITO HOVER NOS LINKS - Mudança de cor e tamanho ao passar o mouse */
+        .menu-principal a:hover {
+          color: var(--hover-color);
+          border-bottom: 0.1rem solid var(--hover-color);
+          padding-bottom: 0.5rem;
+          font-size: 2rem;
+          font-weight: bold;
+        }
+
+        .dropdown-content{
+          list-style: none;
+          border-radius: var(--borderadius);
+        }
+
+        
+
+        /*ICONES--------------------------------------------------------------------------------------------*/
+        .icones {
+          display: flex;
+          align-items: center;
+          flex: 1; 
+          max-width: 600px; 
+          margin: 0 20px; 
+        }
+
+        .icones #pesquisar {
+          font-family: 'Poppins';
+          padding: 10px 15px; 
+          border-radius: var(--borderadius);
+          flex: 1; 
+          background: transparent; 
+          color: #333; 
+          border: none;
+          font-size: 1.4rem; 
+        }
+
+         #pesquisar:hover{
+          border: 1px solid #000000;
+        }
+
+         .icones #pesquisar:focus {
+          outline: none;
+        }
+
+        .icones img {
+          margin: 1rem;
+          cursor: pointer;
+          width: 35px;
+          height: 35px;
+        }
+
+        .icones img:hover {
+          width: 40px;
+          height: 40px;
+        }
+        /*ICONES--------------------------------------------------------------------------------------------*/
+
+
+
+        /*BOTOES--------------------------------------------------------------------------------------------*/
+        .botao-produtos {
+          background: var(--color-btn);
+          color: #fff;
+          padding: 1rem 3rem;
+          font-size: 1.7rem;
+          cursor: pointer;
+          margin: 1rem 0.5rem;
+          display: inline-block;
+          border-radius: var(--borderadius);
+        }
+
+        .botao-produtos:hover {
+          color: white;
+          background: var(--hover-btn);
+          font-weight: bold;
+          transform: scale(1.05);
+        }
+        /*BOTOES--------------------------------------------------------------------------------------------*/
+
+        /* Estilo para o dropdown */
+        .dropdown {
+        position: relative;
+        display: inline-block;
+        }
+
+        .dropbtn {
+        text-decoration: none;
+        color: inherit;
+        padding: px 15px;
+        display: inline-block;
+        }
+
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fff; /* fundo do menu */
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        z-index: 1;
+        }
+
+        .dropdown-content a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        }
+
+        .dropdown-content a:hover {
+        background-color: #f1f1f1;
+        }
+
+        /* Mostra o submenu ao passar o mouse */
+        .dropdown:hover .dropdown-content {
+        display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+        color: #ff007b; 
+        font-weight: bold;
+        }
+
+        /*SECAO INICIAL--------------------------------------------------------------------------------------------*/
+        .iniciar {
+          background: var(--gradiente);
+          background-position: center;
+          height: 100vh;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+
+        .iniciar .conteudo-inicio {
+          max-width: 600px;
+        }
+
+        .iniciar h3 {
+          font-size: 5rem;
+          margin-bottom: 1rem;
+          color: white;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .iniciar p {
+          font-size: 2rem;
+          margin-bottom: 2rem;
+          color: #eee;
+        }
+    
+        .titulo-secoes {
+          text-align: center;
+          font-size: 3.5rem;
+          margin-bottom: 3rem;
+          color: var(--headercolor);
+          padding-top: 2rem;
+        }
+        /*SECAO INICIAL--------------------------------------------------------------------------------------------*/
+
+
+        /*SECAO SOBRE--------------------------------------------------------------------------------------------*/
+        .sobre-nos {
+          background-color: var(--bg-light);
+          padding: 5rem 2rem;
+        }
+
+        .conteudo-sobre {
+          display: flex;
+          align-items: center;
+          gap: 3rem;
+        }
+
+        .imagem-sobre {
+          flex: 0.4;
+        }
+
+        .imagem-sobre img {
+          width: 100%;
+          height: 100%;
+          border-radius: var(--borderadius);
+        }
+
+        .texto-sobre {
+          color: #484343;
+          flex: 1;
+          font-size: 1.8rem;
+          line-height: 1.6;
+        }
+        /*SECAO SOBRE--------------------------------------------------------------------------------------------*/
+
+
+        /*SECAO PRODUTOS--------------------------------------------------------------------------------------------*/
+        .conteiner-produtos {
+          padding: 4rem 2rem;
+          background-color: var(--bg-light, #f5f5f5);
+        }
+
+        /* Títulos das seções (Ajuste global) */
+        .titulo-secoes h2, 
+        .titulo-secoes h3 {
+          color: var(--text-dark);
+          text-align: center;
+          margin-bottom: 2rem;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        /* --- GRADE DE PRODUTOS --- */
+        .grid-produtos {
+          display: grid;
+          /* Cria colunas responsivas automaticamente */
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 2.5rem;
+          max-width: 1200px;
+          margin: 0 auto; 
+        }
+
+        /* --- CARTÃO DE PRODUTO --- */
+        .card-produtos {
+          background-color: white;
+          border-radius: var(--borderadius);
+          padding: 1.5rem;
+          
+      
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 0.5rem;
+
+          /* Estética "Clean" */
+          border: 1px solid rgba(0,0,0,0.05);
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+                      0 2px 4px -1px rgba(0, 0, 0, 0.03);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Efeito ao passar o mouse no Card Inteiro */
+        .card-produtos:hover {
+          transform: translateY(-5px); 
+          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .card-produtos img {
+          width: 100%;
+          height: 220px;  
+          object-fit: cover;   
+          border-radius: 8px;  
+          margin-bottom: 1rem;
+        }
+
+        /* --- TIPOGRAFIA DO CARD --- */
+
+        /* Nome do Produto */
+        .card-produtos h4 {
+          font-size: 1.25rem; 
+          font-weight: 600;
+          color: var(--text-dark);
+          margin: 0;
+          line-height: 1.4;
+
+          overflow: hidden;
+        }
+
+        /* Marca / Tipo */
+        .card-produtos h5 {
+          font-size: 0.9rem;
+          font-weight: 500;
+          color: var(--text-muted);
+          margin: 0;
+          margin-bottom: 0.5rem;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
+        /* Preço Original (Riscado) */
+        .card-produtos #texto-preço-original {
+          font-size: 0.9rem;
+          color: var(--text-muted);
+          text-decoration: line-through;
+          display: block; 
+          margin-top: auto; 
+        }
+
+        /* Preço Atual */
+        .card-produtos p {
+          font-size: 2rem; 
+          font-weight: 700;
+          color: var(--main-color);
+          margin: 0 0 1rem 0;
+          letter-spacing: -0.5px;
+        }
+
+        /* --- BOTÃO --- */
+        .botao-comprar {
+          background-color: var(--color-btn);
+          color: white;
+          border: none;
+          border-radius: var(--borderadius);
+          
+          width: 100%;
+          height: 48px;
+          
+          font-family: 'Poppins', sans-serif;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          
+          transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .botao-comprar:hover {
+          background-color: var(--hover-btn);
+          box-shadow: 0 4px 12px rgba(233, 46, 137, 0.4);
+          transform: scale(1.02);
+        }
+
+        /*SECAO PRODUTOS--------------------------------------------------------------------------------------------*/
+
+
+        /*SECAO AVALIAÇÕES--------------------------------------------------------------------------------------------*/
+        .avaliacoes {
+          background: var(--bg-light);
+          padding: 5rem 2rem;
+          text-align: center;
+        }
+
+        /* CONTAINER DE AVALIAÇÕES - Layout para exibir cards lado a lado */
+        .conteiner-avaliacoes {
+          display: flex;
+          justify-content: center;
+          gap: 2rem;
+          flex-wrap: wrap;
+        }
+
+        /* CARTAO DE AVALIAÇÃO - Estilo individual para cada avaliação */
+        .card-avaliacao {
+          background-color: #1a1a24;
+          padding: 2rem;
+          border-radius: var(--borderadius);
+          max-width: 300px;
+        }
+
+        /* NOME DO CLIENTE - Destaque com cor principal */
+        .card-avaliacao h3 {
+          color: var(--main-color);
+          margin-bottom: 1rem;
+        }
+
+        /* TEXTO DA AAVALIAÇÃO - Formatação do conteudo */
+        .card-avaliacao p {
+          font-style: italic;
+          font-size: 1.6rem;
+        }
+        /*SECAO AVALIAÇÕES--------------------------------------------------------------------------------------------*/
+
+
+
+        /* RODAPÉ */
+        footer {
+          background-color: var(--headercolor);
+          color: white;
+          margin-top: 4rem;
+          border-top: var(--border);
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .rodape {
+          display: flex; 
+          justify-content: space-around; 
+          align-items: flex-start;
+          flex-wrap: wrap;
+          padding: 3rem 2rem;
+          max-width: 1200px;
+          margin: 0 auto;
+          gap: 2rem;
+        }
+
+        /* Colunas do Rodapé (Menu, Redes, Form) */
+        .menu, 
+        .redes-sociais, 
+        .Formulário {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          min-width: 250px;
+        }
+
+        /* Estilo dos Títulos/Texto forte */
+        .redes-sociais p strong,
+        .Formulário p {
+          font-family: 'Cinzel Decorative', serif;
+          font-size: 1.2rem;
+          margin-bottom: 10px;
+          display: block;
+        }
+
+        /* Links do Menu e Redes */
+        .menu a,
+        .redes-sociais a {
+          color: rgba(255, 255, 255, 0.8);
+          text-decoration: none;
+          transition: 0.3s;
+          font-size: 1rem;
+          padding-left: 0;
+        }
+
+        .menu a:hover,
+        .redes-sociais a:hover {
+          color: var(--hover-color);
+          transform: translateX(5px); 
+          text-decoration: none; 
+        }
+
+        /* Formulário de Newsletter */
+        footer form {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          background: transparent;
+          padding: 0;
+        }
+
+        #email {
+          font-family: 'Poppins', sans-serif;
+          background: var(--bg);
+          border: none;
+          border-radius: var(--borderadius);
+          padding: 12px;
+          width: 100%;
+          box-sizing: border-box; 
+          color: var(--text);
+        }
+
+        #cadastro {
+          font-family: 'Poppins', sans-serif;
+          color: #ffffff;
+          font-weight: 700;
+          background-color: var(--hover-btn);
+          height: 45px;
+          width: 100%;
+          border-radius: var(--borderadius);
+          margin-left: 0;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+
+        #cadastro:hover {
+          color: white;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Barra de Direitos Autorais */
+        #Fixo-baixo {
+          background-color: rgba(0, 0, 0, 0.2);
+          color: rgba(255, 255, 255, 0.6);
+          text-align: center;
+          padding: 1.5rem;
+          font-size: 0.9rem;
+          margin-top: 0;
+        }
+
+
+        /* --- ESTILO DA BARRA DE PESQUISA LIVE --- */
+
+        /* Container para garantir que a lista fique embaixo do input */
+        .container-busca {
+          position: relative;
+          display: flex;
+          align-items: center;
+          width: 100%; 
+          background-color: #fff; 
+          border-radius: var(--borderadius);
+          padding-right: 10px; 
+        }
+        
+        /* A lista de resultados (escondida por padrão) */
+        .resultado-busca-lista {
+          position: absolute;
+          top: 100%; 
+          left: 0;
+          width: 100%;
+          background-color: white;
+          border: 1px solid #ddd;
+          border-top: none;
+          border-radius: 0 0 8px 8px;
+          box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+          z-index: 10000; 
+          display: none; 
+          max-height: 300px;
+          overflow-y: auto;
+          margin-top: 5px; 
+        }
+
+        /* Cada item da lista */
+        .item-busca {
+          display: flex;
+          align-items: center;
+          padding: 12px;
+          border-bottom: 1px solid #eee;
+          cursor: pointer;
+          text-decoration: none;
+          color: #333; 
+          background-color: white; 
+        }
+
+        .item-busca:hover {
+          background-color: #f0f0f0; 
+        }
+        .item-busca:last-child {
+          border-bottom: none;
+        }
+
+        /* Imagem pequena dentro da busca */
+        .item-busca img {
+          width: 40px;
+          height: 40px;
+          object-fit: cover;
+          border-radius: 4px;
+          margin-right: 10px;
+          margin-left: 0; 
+        }
+
+        .info-busca {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .info-busca h4 {
+            font-size: 1.4rem;
+            margin: 0;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .info-busca span {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Adicione no final do seu CSS */
+
+        .info-produto {
+          padding: 10px;
+          text-align: center;
+        }
+
+        .marca-produto {
+          font-size: 0.8rem;
+          color: #666;
+          text-transform: uppercase;
+          display: block;
+          margin-bottom: 5px;
+        }
+
+        .tipo-produto {
+          font-size: 0.85rem;
+          color: #888;
+          margin-bottom: 10px;
+          display: block;
+        }
+
+        .precos {
+          margin: 10px 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .preco-original {
+          text-decoration: line-through;
+          color: #aaa;
+          font-size: 0.9rem;
+        }
+
+        .preco-atual {
+          font-weight: bold;
+          color: #d63384; 
+          font-size: 1.1rem;
+        }
+
+        /* RESPONSIVIDADE DO RODAPÉ */
+        @media (max-width: 768px) {
+            .rodape {
+                flex-direction: column; 
+                align-items: center;
+                text-align: center;
+            }
+
+            .menu, .redes-sociais, .Formulário {
+                align-items: center; 
+                width: 100%;
+            }
+            
+            .menu a:hover,
+            .redes-sociais a:hover {
+                transform: translateX(0) scale(1.1); 
+            }
+        }
